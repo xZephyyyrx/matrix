@@ -32,7 +32,7 @@ export default class Controller {
 
   checkInput() {
     const closeKey = "q";
-    if (this.#input.key === closeKey) {
+    if (this.#input.key === closeKey || this.#input.key === '\x03') {
       this.close();
     }
   }
