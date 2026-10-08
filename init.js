@@ -6,8 +6,16 @@ import Controller from './controller.js';
 import Canvas from './canvas.js';
 
 const args = process.argv.slice(2);
-const color = args[args.indexOf("-c") + 1];
-const fps = args[args.indexOf("-f") + 1];
+
+let color;
+if (args.includes("-c")) {
+  color = args[args.indexOf("-c") + 1];
+}
+
+let fps;
+if (args.includes("-f")) {
+  fps = parseInt(args[args.indexOf("-f") + 1]);
+}
 
 const view = new TermView(color);
 const input = new TermInput();
