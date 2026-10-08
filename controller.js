@@ -7,7 +7,7 @@ export default class Controller {
   #fps;
   #coreLoop;
 
-  constructor(canvas, view, input, fps) {
+  constructor(canvas, view, input, fps = 30) {
     this.#canvas = canvas;
     this.#view = view;
     this.#input = input;

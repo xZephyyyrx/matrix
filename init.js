@@ -7,9 +7,7 @@ import Canvas from './canvas.js';
 
 const args = process.argv.slice(2);
 const color = args[args.indexOf("-c") + 1];
-
-// This should be defined by an arg
-const fps = 30;
+const fps = args[args.indexOf("-f") + 1];
 
 const view = new TermView(color);
 const input = new TermInput();
