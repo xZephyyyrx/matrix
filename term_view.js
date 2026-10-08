@@ -1,5 +1,6 @@
 import { getRandInt } from './utils.js';
 import Colors from './colors.js';
+import Charset from './charset.js';
 
 export default class TermView {
   #symbols;
@@ -14,10 +15,7 @@ export default class TermView {
 
   #colorPalette;
 
-  constructor(
-    color = "green",
-    symbols = "กขคฆงจฉชซญฎฏฐฑฒณดตถทธนบปผฝพฟภมยรลวศษสหฬอ"
-  ) {
+  constructor(color, symbols) {
     this.#symbols = symbols;
     this.#colorPalette = Colors.getColor(color);
   }
@@ -26,6 +24,7 @@ export default class TermView {
   openView() {
     this.clearView();
     process.stdout.write("\x1b[?25l");
+    process.stdout.write("\x1b[?7l");
   }
 
   clearView() {
@@ -36,6 +35,7 @@ export default class TermView {
   closeView() {
     this.clearView();
     process.stdout.write("\x1b[?25h");
+    process.stdout.write("\x1b[?7h");
   }
 
   drawAllChars(chars) {

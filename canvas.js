@@ -7,12 +7,20 @@ export default class Canvas {
   #allChars = [];
   #maxTailLength;
   #minTailLength;
+  #charsetTileSize;
 
-  constructor(rows, columns) {
+  constructor(rows, columns, charsetTileSize) {
     this.#rows = rows;
     this.#columns = columns;
+    this.#charsetTileSize = charsetTileSize;
     this.#maxTailLength = Math.ceil(rows / 2);
     this.#minTailLength = Math.floor(rows / 6);
+    this.validateColumns();
+  }
+
+  validateColumns() {
+    const remainder = this.#columns % this.#charsetTileSize;
+    this.#columns -= remainder;
   }
 
   update() {
@@ -37,7 +45,7 @@ export default class Canvas {
   }
 
   createNewChar() {
-    const newColumn = getRandInt(this.#columns)
+    let newColumn = getRandInt(this.#columns / this.#charsetTileSize) * this.#charsetTileSize;
     let newTailLength = getRandInt(this.#maxTailLength);
     while (newTailLength < this.#minTailLength) {
       newTailLength = getRandInt(this.#maxTailLength);
