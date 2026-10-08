@@ -55,6 +55,15 @@ export default class Colors {
           4: "15;15;18"
         }
         break;
+      case "pink":
+        return {
+          0: "255;218;232",
+          1: "255;128;174",
+          2: "255;50;124",
+          3: "180:19:96",
+          4: "72;10;48"
+        }
+        break;
       default:
         return {
           0: "244;184;255",

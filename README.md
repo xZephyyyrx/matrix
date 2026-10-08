@@ -24,4 +24,4 @@ matrix
 | Option | Command | Default | Description |
 | --- | --- | -- | --- |
 | Color | -c | green | Sets the char colour scheme. Options are:
-| --- | --- | --- | green / cyan / blue / red / amber / purple
+| --- | --- | --- | green / cyan / blue / red / amber / purple / pink
