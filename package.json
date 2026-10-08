@@ -1,0 +1,6 @@
+{
+  "name": "matrix",
+  "bin": {
+    "matrix": "./init.js"
+  }
+}
