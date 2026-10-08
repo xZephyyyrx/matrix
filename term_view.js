@@ -98,7 +98,7 @@ export default class TermView {
   // d is the distance from the head, using i in the drawTail function
   getTailColor(d, tailLength) {
     // The percentage of the tail that each color occupies is defined here,
-    // with the remainded consisting of the fourth color
+    // with the remainder consisting of the fourth color
     // Percentages are written assuming 1 = 100%
     const firstPercent = 0.4;
     const secondPercent = 0.3;
