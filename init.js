@@ -22,6 +22,12 @@ if (args.includes("-f")) {
   fps = 30;
 }
 
+if (fps > 1000) {
+  fps = 1000;
+} else if (fps <= 0) {
+  fps = 1;
+}
+
 let charset;
 if (args.includes("-l")) {
   charset = args[args.indexOf("-l") + 1];
