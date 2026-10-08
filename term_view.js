@@ -1,10 +1,10 @@
-import { getRandInt } from './utils.js';
-import Colors from './colors.js';
-import Charset from './charset.js';
+import { getRandInt } from "./utils.js";
+import Colors from "./colors.js";
+import Charset from "./charset.js";
 
 export default class TermView {
   #symbols;
-  
+
   // Valid colors are:
   // "green"
   // "purple"
@@ -19,7 +19,7 @@ export default class TermView {
     this.#symbols = symbols;
     this.#colorPalette = Colors.getColor(color);
   }
-  
+
   // Clears existing content in the console and removes cursor visibility
   openView() {
     this.clearView();
@@ -39,7 +39,6 @@ export default class TermView {
   }
 
   drawAllChars(chars) {
-
     let output = "";
 
     const numberOfChars = chars.length;
@@ -105,11 +104,13 @@ export default class TermView {
     const secondPercent = 0.3;
     const thirdPercent = 0.2;
 
-    if (d < Math.floor(tailLength * (firstPercent))) {
+    if (d < Math.floor(tailLength * firstPercent)) {
       return this.#colorPalette[1];
     } else if (d < Math.floor(tailLength * (firstPercent + secondPercent))) {
       return this.#colorPalette[2];
-    } else if (d < Math.floor(tailLength * (firstPercent + secondPercent + thirdPercent))) {
+    } else if (
+      d < Math.floor(tailLength * (firstPercent + secondPercent + thirdPercent))
+    ) {
       return this.#colorPalette[3];
     } else {
       return this.#colorPalette[4];

@@ -7,8 +7,8 @@ export default class Colors {
           1: "185;193;255",
           2: "122;47;191",
           3: "58;15;93",
-          4: "15;15;18"
-        }
+          4: "15;15;18",
+        };
         break;
       case "green":
         return {
@@ -16,8 +16,8 @@ export default class Colors {
           1: "0;255;65",
           2: "0;194;74",
           3: "0,143;17",
-          4: "0,59,0"
-        }
+          4: "0,59,0",
+        };
         break;
       case "amber":
         return {
@@ -25,8 +25,8 @@ export default class Colors {
           1: "255;176;0",
           2: "194;136;0",
           3: "122;79;0",
-          4: "26;15;0"
-        }
+          4: "26;15;0",
+        };
         break;
       case "cyan":
         return {
@@ -34,8 +34,8 @@ export default class Colors {
           1: "0;212;255",
           2: "26;167;199",
           3: "14;90;110",
-          4: "15;15;18"
-        }
+          4: "15;15;18",
+        };
         break;
       case "blue":
         return {
@@ -43,8 +43,8 @@ export default class Colors {
           1: "124;200;255",
           2: "58;120;181",
           3: "14;42;71",
-          4: "6;18;30"
-        }
+          4: "6;18;30",
+        };
         break;
       case "red":
         return {
@@ -52,8 +52,8 @@ export default class Colors {
           1: "200;30;30",
           2: "122;15;15",
           3: "61;7;7",
-          4: "15;15;18"
-        }
+          4: "15;15;18",
+        };
         break;
       case "pink":
         return {
@@ -61,8 +61,8 @@ export default class Colors {
           1: "255;128;174",
           2: "255;50;124",
           3: "180:19:96",
-          4: "72;10;48"
-        }
+          4: "72;10;48",
+        };
         break;
       default:
         return {
@@ -70,8 +70,8 @@ export default class Colors {
           1: "185;193;255",
           2: "122;47;191",
           3: "58;15;93",
-          4: "15;15;18"
-        }
+          4: "15;15;18",
+        };
         break;
     }
   }

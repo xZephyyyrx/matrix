@@ -1,5 +1,5 @@
-import Canvas from './canvas.js';
-import Charset from './charset.js';
+import Canvas from "./canvas.js";
+import Charset from "./charset.js";
 
 export default class Controller {
   #canvas;
@@ -9,7 +9,7 @@ export default class Controller {
   #coreLoop;
   #charset;
 
-  constructor(canvas, view, input, fps = 30, charset = "en") {
+  constructor(canvas, view, input, fps, charset) {
     this.#canvas = canvas;
     this.#view = view;
     this.#input = input;
@@ -35,7 +35,7 @@ export default class Controller {
 
   checkInput() {
     const closeKey = "q";
-    if (this.#input.key === closeKey || this.#input.key === '\x03') {
+    if (this.#input.key === closeKey || this.#input.key === "\x03") {
       this.close();
     }
   }
@@ -43,15 +43,21 @@ export default class Controller {
   checkWindowSize() {
     const windowRows = process.stdout.rows;
     const windowColumns = process.stdout.columns;
-    if (this.#canvas.rows !== windowRows ||
-        this.#canvas.columns !== this.adjustWindowColumns(windowColumns)) {
-      this.#canvas = new Canvas(windowRows, windowColumns, Charset.getCharset(this.#charset)[0]);
+    if (
+      this.#canvas.rows !== windowRows ||
+      this.#canvas.columns !== this.adjustWindowColumns(windowColumns)
+    ) {
+      this.#canvas = new Canvas(
+        windowRows,
+        windowColumns,
+        Charset.getCharset(this.#charset)[0],
+      );
       this.#view.clearView();
-    } 
+    }
   }
 
   adjustWindowColumns(windowColumns) {
-    const remainder = (windowColumns % Charset.getCharset(this.#charset)[0]);
+    const remainder = windowColumns % Charset.getCharset(this.#charset)[0];
     return windowColumns - remainder;
   }
 

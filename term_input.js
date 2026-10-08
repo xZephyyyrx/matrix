@@ -3,7 +3,7 @@ export default class TermInput {
 
   enableInputReading() {
     process.stdin.setRawMode(true);
-    process.stdin.on('data', (key) => {
+    process.stdin.on("data", (key) => {
       if (key !== null) {
         this.#key = key.toString();
       }

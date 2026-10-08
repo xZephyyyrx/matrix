@@ -1,5 +1,5 @@
-import Char from './char.js';
-import { getRandInt } from './utils.js';
+import Char from "./char.js";
+import { getRandInt } from "./utils.js";
 
 export default class Canvas {
   #rows;
@@ -32,7 +32,7 @@ export default class Canvas {
 
   removeDeadChars() {
     this.#allChars = this.#allChars.filter(
-      char => char.row - char.tailLength < this.#rows
+      (char) => char.row - char.tailLength < this.#rows,
     );
   }
 
@@ -45,7 +45,8 @@ export default class Canvas {
   }
 
   createNewChar() {
-    let newColumn = getRandInt(this.#columns / this.#charsetTileSize) * this.#charsetTileSize;
+    let newColumn =
+      getRandInt(this.#columns / this.#charsetTileSize) * this.#charsetTileSize;
     let newTailLength = getRandInt(this.#maxTailLength);
     while (newTailLength < this.#minTailLength) {
       newTailLength = getRandInt(this.#maxTailLength);
