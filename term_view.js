@@ -4,15 +4,6 @@ import Charset from "./charset.js";
 
 export default class TermView {
   #symbols;
-
-  // Valid colors are:
-  // "green"
-  // "purple"
-  // "amber"
-  // "cyan"
-  // "blue"
-  // "red"
-
   #colorPalette;
 
   constructor(color, symbols) {
@@ -23,6 +14,7 @@ export default class TermView {
   // Clears existing content in the console and removes cursor visibility
   openView() {
     this.clearView();
+    process.stdout.write("\x1b7");
     process.stdout.write("\x1b[?25l");
     process.stdout.write("\x1b[?7l");
   }
@@ -34,6 +26,7 @@ export default class TermView {
   // Returns cursor visibility
   closeView() {
     this.clearView();
+    process.stdout.write("\x1b8");
     process.stdout.write("\x1b[?25h");
     process.stdout.write("\x1b[?7h");
   }
@@ -56,15 +49,11 @@ export default class TermView {
 
     let output = "";
 
-    output += "\x1b7";
-
     output += `\x1b[${y + 1};${x + 1}H`;
     output += `\x1b[38;2;${this.getHeadColor()}m`;
     output += this.getRandSymbol();
 
     output += this.drawTail(x, y, char.tailLength);
-
-    output += "\x1b8";
 
     return output;
   }

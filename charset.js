@@ -23,6 +23,12 @@ export default class Charset {
           1: "あいうえおかきくけこがぎぐげごさしすせそざじずぜぞたちつてとだぢづでどなにぬねのはひふへほばびぶべぼぱぴぷぺぽまみむめもやゆよらりるれろわゐゑをんをっ",
         };
         break;
+      case "test":
+        return {
+          0: 1,
+          1: "@"
+        }
+        break;
       default:
         return {
           0: 1,
