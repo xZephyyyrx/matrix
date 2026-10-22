@@ -4,6 +4,7 @@ import TermView from "./term_view.js";
 import TermInput from "./term_input.js";
 import Controller from "./controller.js";
 import Canvas from "./canvas.js";
+import Colors from "./colors.js";
 import Charset from "./charset.js";
 
 const args = process.argv.slice(2);
@@ -35,7 +36,7 @@ if (args.includes("-l")) {
   charset = "en";
 }
 
-const view = new TermView(color, Charset.getCharset(charset)[1]);
+const view = new TermView(Colors.getColor(color), Charset.getCharset(charset)[1]);
 const input = new TermInput();
 
 const canvas = new Canvas(

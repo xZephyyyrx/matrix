@@ -1,14 +1,12 @@
 import { getRandInt } from "./utils.js";
-import Colors from "./colors.js";
-import Charset from "./charset.js";
 
 export default class TermView {
   #symbols;
   #colorPalette;
 
   constructor(color, symbols) {
+    this.#colorPalette = color;
     this.#symbols = symbols;
-    this.#colorPalette = Colors.getColor(color);
   }
 
   // Clears existing content in the console and removes cursor visibility
@@ -60,7 +58,7 @@ export default class TermView {
 
   drawTail(x, y, tailLength) {
     let output = "";
-    for (let i = 0; i < tailLength; i++) {
+    for (let i = 1; i < tailLength; i++) {
       output += `\x1b[38;2;${this.getTailColor(i, tailLength)}m`;
       if (y - i > 0) {
         output += `\x1b[${y - i};${x + 1}H`;
