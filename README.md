@@ -27,3 +27,8 @@ matrix
 | FPS     | -f      | 30      | Sets the frames-per-second from 1 - 1000          |
 | Charset | -l      | en      | Sets the charset used. Options are:               |
 | ---     | ---     | ---     | en / thai / hira                                  |
+
+## To-Do
+
+-Complete rewrite of term_view
+-Ensure null args or invalid args are handled correctly
